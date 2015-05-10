@@ -107,3 +107,19 @@ MidiInput::MidiInput(){
   this->midiin->setCallback(this->fireMessageEvent, this);
   this->midiin->ignoreTypes(false, false, false);
 }
+
+
+/**\fn MidiInput::~MidiInput
+ *
+ * MidiInput class destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+MidiInput::~MidiInput(){
+  if((this->midiin != 0) && this->external_midiin == false){
+    delete this->midiin;
+  }
+}
