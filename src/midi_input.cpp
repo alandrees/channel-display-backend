@@ -123,3 +123,29 @@ MidiInput::~MidiInput(){
     delete this->midiin;
   }
 }
+
+
+/**\fn MidiInput::fireMidiEvent
+ *
+ * Fires the callback list registered with the input source to collect the midi messages for a given output
+ *
+ * @param deltatime (double)
+ * @param message (std::vector<unsigned char>)
+ * @param userData (void*)
+ *
+ * @returns None
+ */
+
+void MidiInput::fireMessageEvent(double deltatime, std::vector<unsigned char> *message, void *userData){
+  MidiInput* input_object = (MidiInput*)userData;
+
+  std::list<CallbackMessage>::iterator i = input_object->message_callbacks.begin();
+
+  msg_callback cb = 0;
+
+  for(i; i != input_object->message_callbacks.end(); ++i){
+    cb = *i->cb;
+    cb(message);
+  }
+
+}
