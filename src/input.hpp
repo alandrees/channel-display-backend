@@ -13,4 +13,14 @@
 
 #ifndef INPUT_HPP
 #define INPUT_HPP
+class Input
+{
+private:
+  int instance; /**Instance of current object*/
+protected:
+  static int instances; /**Number of input instances*/
+public:
+  Input();
+  ~Input();
+};
 #endif
