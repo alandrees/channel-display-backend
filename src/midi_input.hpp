@@ -12,3 +12,7 @@
 #include <list>
 #include "RtMidi.h"
 #include "input.hpp"
+
+#ifndef MIDI_INPUT_HPP
+#define MIDI_INPUT_HP
+#endif
