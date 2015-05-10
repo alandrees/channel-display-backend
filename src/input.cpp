@@ -23,3 +23,17 @@
 Input::Input()
 {
 }
+
+
+/**\fn Input::~Input
+ *
+ * Input base class destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+Input::~Input()
+{
+}
