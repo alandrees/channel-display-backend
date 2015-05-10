@@ -170,3 +170,23 @@ int MidiInput::addMessageCallback(msg_callback callback){
 
   return cb.id;
 }
+
+
+/**\fn MidiInput::removeMessageCallback
+ *
+ * Removes a MIDI message callback function from the list of functions
+ *
+ * @param id (int) message callback function id to remove
+ *
+ * @returns None
+ */
+
+void MidiInput::removeMessageCallback(int id){
+  /*  std::list<CallbackMessage>::iterator i = this->message_callbacks.begin();
+
+  for(i; i != this->message_callbacks.end(); ++i){
+    if(*i.id == id){
+      this->message_callbacks.erase(i);
+    }
+    }*/
+}
