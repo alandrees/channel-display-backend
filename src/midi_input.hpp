@@ -22,4 +22,26 @@ struct CallbackMessage {
   msg_callback cb; /** callback function */
   int id; /** identifier */
 };
+
+class MidiInput: private Input
+{
+private:
+  RtMidiIn *midiin = 0; /** RtMidiIn object reference */
+  int midi_instance = 0; /** midi I/O instance to use */
+  bool external_midiin = false; /** boolean determining if we need to clean up midiin or not */
+  int callback_ids = 0; /** integer counter to keep track of the callback ids */
+
+  std::list<CallbackMessage> message_callbacks; /** std::list of CallbackMessage structures*/
+
+  static void fireMessageEvent(double, std::vector<unsigned char>*, void *);
+
+public:
+  MidiInput(int, RtMidiIn*);
+  MidiInput(int);
+  MidiInput();
+  ~MidiInput();
+
+  int addMessageCallback(msg_callback);
+  void removeMessageCallback(int);
+};
 #endif
