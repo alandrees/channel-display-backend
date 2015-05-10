@@ -10,3 +10,16 @@
 #include <string>
 #include <cstdlib>
 #include "input.hpp"
+
+/**\fn Input::Input
+ *
+ * Input base class constructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+Input::Input()
+{
+}
