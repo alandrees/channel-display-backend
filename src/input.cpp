@@ -5,3 +5,8 @@
  *  Implementation for the Input base class
  *
  */
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include "input.hpp"
