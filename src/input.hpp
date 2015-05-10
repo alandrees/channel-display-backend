@@ -10,3 +10,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
+#ifndef INPUT_HPP
+#define INPUT_HPP
+#endif
