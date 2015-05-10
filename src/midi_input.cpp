@@ -149,3 +149,24 @@ void MidiInput::fireMessageEvent(double deltatime, std::vector<unsigned char> *m
   }
 
 }
+
+
+/**\fn MidiInput::addMessageCallback
+ *
+ * Adds a MIDI message callback function to the list of functions to handle midi input messages
+ *
+ * @param (void*) Function pointer for the callback message
+ *
+ * @returns (int) Integer ID refering of the callback function
+ */
+
+int MidiInput::addMessageCallback(msg_callback callback){
+  CallbackMessage cb;
+
+  cb.cb = callback;
+  cb.id = this->callback_ids++;
+
+  this->message_callbacks.push_back(cb);
+
+  return cb.id;
+}
