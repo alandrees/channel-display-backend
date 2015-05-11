@@ -11,3 +11,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
+#ifndef OUTPUT_HPP
+#define OUTPUT_HPP
+#endif
