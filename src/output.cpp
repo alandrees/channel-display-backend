@@ -23,3 +23,17 @@
 Output::Output()
 {
 }
+
+
+/**\fn Output::~Output
+ *
+ * Output base class destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+Output::~Output()
+{
+}
