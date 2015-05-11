@@ -10,3 +10,16 @@
 #include <string>
 #include <cstdlib>
 #include "output.hpp"
+
+/**\fn Output::Output
+ *
+ * Output base class constructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+Output::Output()
+{
+}
