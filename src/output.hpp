@@ -5,3 +5,9 @@
  *   Header file for the output base class
  *
  */
+
+
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
