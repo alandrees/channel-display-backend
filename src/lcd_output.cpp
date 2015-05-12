@@ -104,3 +104,21 @@ void LCDOutput::flushBuffer(int index){
   */
 
 }
+
+
+/**\fn LCDOutput::flushAll
+ *
+ * Flush all lines to the output LCD screen
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::flushAll(){
+  /*
+  for(int i = 0; i < this->height; i++){
+    this->flushBuffer(i);
+  }
+  */
+}
