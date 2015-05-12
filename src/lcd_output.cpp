@@ -138,3 +138,31 @@ void LCDOutput::flushAll(){
 void LCDOutput::pushToBuffer(int buffer, int position, std::string character){
   //this->line_buffers[buffer] = character;
 }
+
+
+/**\fn LCDOutput::bulkUpdate
+ *
+ * Update all the buffer lines
+ *
+ * @param full_buffer (std::vector<std::string*>) full buffer to overwrite current buffer with
+ * @param flush_now (bool) flush the buffer to the output
+ *
+ * @returns None
+ */
+
+void LCDOutput::bulkUpdate(VectorBuffer full_buffer, bool flush_now){
+  /*
+  this->clearAll();
+
+  //fixme: need to get iterators instead
+  for(int i = 0; i < this->height; i++){
+    for(int j = 0; i < this->width; j++){
+      this->line_buffers[i][j] = full_buffer[i][j];
+    }
+  }
+
+  if(flush_now == true){
+    this->flushAll();
+  }
+  */
+}
