@@ -80,3 +80,27 @@ LCDOutput::LCDOutput(int width, int height, int index){
 LCDOutput::~LCDOutput(){
   delete this->line_buffers;
 }
+
+
+/**\fn LCDOutput::flushBuffer
+ *
+ * Flushes a line to the device
+ *
+ * @param index (int) index of the buffer to flush
+ *
+ * @returns None
+ */
+
+void LCDOutput::flushBuffer(int index){
+  /*
+  std::string outputstring = "";
+  LineBuffer* buffervector;
+
+  if(index >= 0){
+    buffervector = *(this->line_buffers[index];
+  }else{
+    return;
+  }
+  */
+
+}
