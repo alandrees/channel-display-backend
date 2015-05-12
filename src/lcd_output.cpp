@@ -184,3 +184,20 @@ void LCDOutput::clearBuffer(int index){
   }
   */
 }
+
+/**\fn LCDOutput::clearAll
+ *
+ * Clears all the buffers for a given index
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::clearAll(){
+  /*
+  for(int i = 0; i < this->height; i++){
+    this->clearBuffer(i);
+  }
+  */
+}
