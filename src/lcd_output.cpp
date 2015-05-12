@@ -201,3 +201,18 @@ void LCDOutput::clearAll(){
   }
   */
 }
+
+
+/**\fn LCDOutput::getCurrentOutput
+ *
+ * Gets the currently displayed text
+ *
+ * @param None
+ *
+ * @returns (VectorBuffer) containing the buffer text
+ */
+
+VectorBuffer LCDOutput::getCurrentOutput(){
+  VectorBuffer* a = new VectorBuffer;
+  return *a;
+}
