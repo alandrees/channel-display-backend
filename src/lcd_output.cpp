@@ -66,3 +66,17 @@ LCDOutput::LCDOutput(int width, int height, int index){
 
   }
 }
+
+
+/**\fn LCDOutput::~LCDOutput
+ *
+ * LCD Output class destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+LCDOutput::~LCDOutput(){
+  delete this->line_buffers;
+}
