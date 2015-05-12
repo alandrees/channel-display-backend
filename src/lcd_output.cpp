@@ -216,3 +216,18 @@ VectorBuffer LCDOutput::getCurrentOutput(){
   VectorBuffer* a = new VectorBuffer;
   return *a;
 }
+
+
+/**\fn LCDOutput::outputToLCD
+ *
+ * Logic to send the data to the LCD screen
+ *
+ * @param line (int)
+ * @param text (std::string)
+ *
+ * @returns (bool) True on success, False on any failure
+ */
+
+bool LCDOutput::outputToLCD(int line, std::string text){
+  return true;
+}
