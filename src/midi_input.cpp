@@ -76,6 +76,7 @@ MidiInput::MidiInput(int port){
   this->midiin->ignoreTypes(false, false, false);
 }
 
+
 /**\fn MidiInput::MidiInput
  *
  * Overloaded MidiInput class constructor which creates an internal-only RtMidiIn object and defaults to device 0
