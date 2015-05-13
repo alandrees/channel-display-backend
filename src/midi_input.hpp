@@ -12,6 +12,8 @@
 #include <list>
 #include "RtMidi.h"
 #include "input.hpp"
+#include "output.hpp"
+#include "callback.hpp"
 
 #ifndef MIDI_INPUT_HPP
 #define MIDI_INPUT_HP
