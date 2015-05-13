@@ -141,13 +141,16 @@ MidiInput::~MidiInput(){
 void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void *userData){
   MidiInput* input_object = (MidiInput*)userData;
 
+  midi_message midi_message;
+
+  midi_message.msg[0] = (*message)[0];
+  midi_message.msg[1] = (*message)[1];
+  midi_message.msg[2] = (*message)[2];
+
   std::list<CallbackMessage>::iterator i = input_object->message_callbacks.begin();
 
-  msg_callback cb = 0;
-
-  for(i; i != input_object->message_callbacks.end(); ++i){
-    cb = *i->cb;
-    cb(message);
+  for(; i != input_object->message_callbacks.end(); ++i){
+    //pass midi_message to the functor
   }
 
 }
