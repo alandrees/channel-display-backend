@@ -31,7 +31,7 @@ public:
   ~LCDOutput();
   void flushBuffer(int);
   void flushAll();
-  void pushToBuffer(int, int, std::string);
+  void pushToBuffer(int, int, unsigned char);
   void bulkUpdate(VectorBuffer, bool);
   void clearBuffer(int);
   void clearAll();
