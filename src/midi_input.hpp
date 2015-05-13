@@ -18,6 +18,7 @@
 #ifndef MIDI_INPUT_HPP
 #define MIDI_INPUT_HPP
 
+typedef std::vector<unsigned char>*  rtmidi_message; /**typedef for rtmidi midi message*/
 
 struct CallbackMessage {
   msg_callback cb; /** callback function */
