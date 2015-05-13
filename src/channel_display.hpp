@@ -11,6 +11,7 @@
 #include <vector>
 #include "midi_input.hpp"
 #include "lcd_output.hpp"
+#include "callback.hpp"
 
 #ifndef CHANNEL_DISPLAY_HPP
 #define CHANNEL_DISPLAY_HPP
