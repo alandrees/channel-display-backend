@@ -86,7 +86,6 @@ LCDOutput::~LCDOutput(){
  */
 
 void LCDOutput::flushBuffer(int index){
-  /*
   std::string outputstring = "";
   LineBuffer* buffervector;
 
@@ -95,8 +94,6 @@ void LCDOutput::flushBuffer(int index){
   }else{
     return;
   }
-  */
-
 }
 
 
