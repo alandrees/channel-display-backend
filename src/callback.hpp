@@ -13,4 +13,9 @@
 
 #ifndef CALLBACK_HPP
 #define CALLBACK_HPP
+
+class MidiCallback{
+public:
+  void midiCallback(std::vector<unsigned char>*){throw 20;}
+};
 #endif
