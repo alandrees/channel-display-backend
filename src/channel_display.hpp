@@ -15,4 +15,19 @@
 
 #ifndef CHANNEL_DISPLAY_HPP
 #define CHANNEL_DISPLAY_HPP
+class ChannelDisplay : MidiCallback{
+  enum command : int {
+    ADD_CHARACTER=0xb,
+      CLEAR_BUFFER=0xa,
+      FLUSH_BUFFER=0xc
+      };
+
+  std::vector<MidiInput*>  input; /**Input object**/
+  std::vector<LCDOutput*> output; /**Output object**/
+
+public:
+  ChannelDisplay();
+  ~ChannelDisplay();
+  void midiCallback(midi_message);
+};
 #endif
