@@ -30,4 +30,6 @@ public:
   ~ChannelDisplay();
   void midiCallback(midi_message);
 };
+
+int main(int, char**);
 #endif
