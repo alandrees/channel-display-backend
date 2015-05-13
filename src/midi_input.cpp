@@ -138,7 +138,7 @@ MidiInput::~MidiInput(){
  * @returns None
  */
 
-void MidiInput::fireMessageEvent(double deltatime, std::vector<unsigned char> *message, void *userData){
+void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void *userData){
   MidiInput* input_object = (MidiInput*)userData;
 
   std::list<CallbackMessage>::iterator i = input_object->message_callbacks.begin();
