@@ -18,4 +18,6 @@ class MidiCallback{
 public:
   void midiCallback(std::vector<unsigned char>*){throw 20;}
 };
+
+typedef void (MidiCallback::*output_callback)(std::vector<unsigned char>*); /** typedef defining a type for the midiCallback object method pointer*/
 #endif
