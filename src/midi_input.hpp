@@ -56,7 +56,7 @@ public:
   MidiInput();
   ~MidiInput();
 
-  int addMessageCallback(msg_callback);
+  int addMessageCallback(output_callback, MidiCallback*);
   void removeMessageCallback(int);
 };
 #endif
