@@ -48,7 +48,7 @@ private:
 
   std::list<CallbackMessage> message_callbacks; /** std::list of CallbackMessage structures*/
 
-  static void fireMessageEvent(double, std::vector<unsigned char>*, void *);
+  static void fireMessageEvent(double, rtmidi_message, void *);
 
 public:
   MidiInput(int, RtMidiIn*);
