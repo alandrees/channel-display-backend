@@ -42,3 +42,16 @@ ChannelDisplay::ChannelDisplay(){
 
   this->input[0]->addMessageCallback(&MidiCallback::midiCallback, mc);
 }
+
+
+/**\fn ChannelDisplay::~ChannelDisplay
+ *
+ * ChannelDisplay class destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+ChannelDisplay::~ChannelDisplay(){
+}
