@@ -121,12 +121,12 @@ void LCDOutput::flushAll(){
  *
  * @param buffer (int) buffer to push the character
  * @param position (int) position to put the character
- * @param character (std::string) character to push to the buffer
+ * @param character (unsigned char) character to push to the buffer
  *
  * @returns None
  */
 
-void LCDOutput::pushToBuffer(int buffer, int position, std::string character){
+void LCDOutput::pushToBuffer(int line, int position, unsigned char character){
   //this->line_buffers[buffer] = character;
 }
 
