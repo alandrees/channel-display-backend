@@ -160,7 +160,8 @@ void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void 
  *
  * Adds a MIDI message callback function to the list of functions to handle midi input messages
  *
- * @param (void*) Function pointer for the callback message
+ * @param callback (void*) Function pointer for the callback message
+ * @param output (Output*) Pointer to execute the callback with
  *
  * @returns (int) Integer ID refering of the callback function
  */
