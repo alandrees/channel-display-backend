@@ -26,8 +26,19 @@ struct CallbackMessage {
   int id; /** identifier */
 };
 
-class MidiInput: private Input
-{
+union midi_message{
+  struct messageParts{
+    unsigned int channel : 4;
+    unsigned int msgtype : 4;
+    unsigned int position : 5;
+    unsigned int line : 3;
+    unsigned char character;
+  } message;
+  unsigned char msg[3];
+};
+
+
+class MidiInput: private Input{
 private:
   RtMidiIn *midiin = 0; /** RtMidiIn object reference */
   int midi_instance = 0; /** midi I/O instance to use */
