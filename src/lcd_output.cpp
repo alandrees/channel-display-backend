@@ -48,9 +48,6 @@ LCDOutput::LCDOutput(int width, int height, int index){
     this->output_number = 0;
   }
 
-  this->line_buffers = new VectorBuffer;
-  this->current_output = new VectorBuffer;
-
   for(int i = 0; i < this->height; i++){
     str1 = new LineBuffer;
     str2 = new LineBuffer;
@@ -60,10 +57,8 @@ LCDOutput::LCDOutput(int width, int height, int index){
       str2->push_back(emptystring);
     }
 
-    this->line_buffers->push_back(str1);
-    this->current_output->push_back(str2);
-
-
+    this->line_buffers.push_back(str1);
+    this->current_output.push_back(str2);
   }
 }
 
@@ -78,7 +73,6 @@ LCDOutput::LCDOutput(int width, int height, int index){
  */
 
 LCDOutput::~LCDOutput(){
-  delete this->line_buffers;
 }
 
 
