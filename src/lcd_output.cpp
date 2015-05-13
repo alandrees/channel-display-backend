@@ -220,5 +220,5 @@ VectorBuffer LCDOutput::getCurrentOutput(){
  */
 
 bool LCDOutput::outputToLCD(int line, std::string text){
-  return true;
+  return false;
 }
