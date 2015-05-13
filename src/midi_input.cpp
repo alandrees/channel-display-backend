@@ -12,6 +12,7 @@
 #include "RtMidi.h"
 #include "input.hpp"
 #include "midi_input.hpp"
+#include "callback.hpp"
 
 /**\fn MidiInput::MidiInput
  *
