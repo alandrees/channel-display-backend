@@ -10,3 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+#ifndef CALLBACK_HPP
+#define CALLBACK_HPP
+#endif
