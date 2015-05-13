@@ -55,3 +55,35 @@ ChannelDisplay::ChannelDisplay(){
 
 ChannelDisplay::~ChannelDisplay(){
 }
+
+
+/**\fn ChannelDisplay::midiCallback
+ *
+ * Callback to be executed on midi receipt
+ *
+ * @param message (midi_message) midi message structure for the message
+ *
+ * @returns None
+ */
+
+
+void ChannelDisplay::midiCallback(midi_message message){
+  if(message.message.msgtype == ADD_CHARACTER){
+    this->output[message.message.channel]->pushToBuffer(message.message.line,
+							message.message.position,
+							message.message.character);
+    /*
+    std::cout << "Add character " << midi_message.message.character;
+    std::cout << " to output " << midi_message.message.channel;
+    std::cout << " (" << " " << midi_message.message.line << ", " << midi_message.message.position << ")\n";
+    */
+  }else if(message.message.msgtype == CLEAR_BUFFER){
+    this->output[message.message.channel]->clearAll();
+    //std::cout << "Clear the output buffer for output " << midi_message.message.channel << "\n";
+  }else if(message.message.msgtype == FLUSH_BUFFER){
+    this->output[message.message.channel]->flushAll();
+    //std::cout << "Flush the output buffer for output " << midi_message.message.channel << "\n";
+  }else{
+    std::cout << std::hex << (int)message.message.msgtype << " is not a command.\n";
+  }
+}
