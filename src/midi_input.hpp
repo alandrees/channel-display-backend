@@ -45,6 +45,7 @@ private:
   bool external_midiin = false; /** boolean determining if we need to clean up midiin or not */
   int callback_ids = 0; /** integer counter to keep track of the callback ids */
 
+
   std::list<CallbackMessage> message_callbacks; /** std::list of CallbackMessage structures*/
 
   static void fireMessageEvent(double, std::vector<unsigned char>*, void *);
