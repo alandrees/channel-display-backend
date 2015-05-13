@@ -127,13 +127,13 @@ MidiInput::~MidiInput(){
 }
 
 
-/**\fn MidiInput::fireMidiEvent
+/**\fn MidiInput::fireMessageEvent
  *
  * Fires the callback list registered with the input source to collect the midi messages for a given output
  *
- * @param deltatime (double)
- * @param message (std::vector<unsigned char>)
- * @param userData (void*)
+ * @param deltatime (double) ???
+ * @param message (rtmidi_message) midi message bytes sent
+ * @param userData (void*) a pointer to a structure of user data to be passed to the function
  *
  * @returns None
  */
