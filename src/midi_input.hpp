@@ -22,6 +22,7 @@ typedef std::vector<unsigned char>*  rtmidi_message; /**typedef for rtmidi midi 
 
 struct CallbackMessage {
   output_callback cb; /** callback function */
+  MidiCallback* o; /** output object reference */
   int id; /** identifier */
 };
 
