@@ -166,11 +166,12 @@ void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void 
  * @returns (int) Integer ID refering of the callback function
  */
 
-int MidiInput::addMessageCallback(msg_callback callback){
+int MidiInput::addMessageCallback(output_callback callback, MidiCallback* output){
   CallbackMessage cb;
 
   cb.cb = callback;
   cb.id = this->callback_ids++;
+  cb.o = output;
 
   this->message_callbacks.push_back(cb);
 
