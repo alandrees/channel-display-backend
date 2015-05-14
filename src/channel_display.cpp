@@ -125,7 +125,7 @@ bool ChannelDisplay::initGPIO(){
 
   std::chrono::milliseconds timespan(1000);
 
-  std::cout << "Bringing Up GPIO Interface...";
+  std::cout << "Bringing Up GPIO Interface..." << std::flush;
 
   //export the pins
   system("echo 7 > /sys/class/gpio/export");
