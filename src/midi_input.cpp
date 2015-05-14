@@ -152,6 +152,13 @@ void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void 
   CallbackMessage cb;
 
   for(i = input_object->message_callbacks.begin(); i != input_object->message_callbacks.end(); ++i){
+    cb = *i;
+
+    (cb.o->*cb.cb)(msg.message.channel,
+		   msg.message.msgtype,
+		   msg.message.position,
+		   msg.message.line,
+		   msg.message.character);
   }
 
 }
