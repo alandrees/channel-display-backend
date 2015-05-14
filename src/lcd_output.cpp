@@ -58,6 +58,8 @@ LCDOutput::LCDOutput(int width, int height, int index){
     this->line_buffers.push_back(str1);
     this->current_output.push_back(str2);
   }
+
+  this->enable_output = false;
 }
 
 
