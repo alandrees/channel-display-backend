@@ -70,25 +70,28 @@ ChannelDisplay::~ChannelDisplay(){
  * @returns None
  */
 
-
-void ChannelDisplay::midiCallback(midi_message message){
-  if(message.message.msgtype == ADD_CHARACTER){
-    this->output[message.message.channel]->pushToBuffer(message.message.line,
-							message.message.position,
-							message.message.character);
+void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char character){
+  if(type == ADD_CHARACTER){
+    this->output[ch]->pushToBuffer(line,
+				   pos,
+				   character);
     /*
-    std::cout << "Add character " << midi_message.message.character;
-    std::cout << " to output " << midi_message.message.channel;
-    std::cout << " (" << " " << midi_message.message.line << ", " << midi_message.message.position << ")\n";
+    std::cout << "Add character " << character;
+    std::cout << " to output " << ch;
+    std::cout << " (" << " " << line << ", " << pos << ")\n";
     */
-  }else if(message.message.msgtype == CLEAR_BUFFER){
-    this->output[message.message.channel]->clearAll();
-    //std::cout << "Clear the output buffer for output " << midi_message.message.channel << "\n";
-  }else if(message.message.msgtype == FLUSH_BUFFER){
-    this->output[message.message.channel]->flushAll();
-    //std::cout << "Flush the output buffer for output " << midi_message.message.channel << "\n";
+  }else if(type == CLEAR_BUFFER){
+    this->output[ch]->clearAll();
+    /*
+    std::cout << "Clear the output buffer for output " << ch << "\n";
+    */
+  }else if(type == FLUSH_BUFFER){
+    this->output[ch]->flushAll();
+    /*
+    std::cout << "Flush the output buffer for output " << ch << "\n";
+    */
   }else{
-    std::cout << std::hex << (int)message.message.msgtype << " is not a command.\n";
+    std::cout << std::hex << (int)type << " is not a command.\n";
   }
 }
 
