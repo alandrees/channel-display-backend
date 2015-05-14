@@ -28,7 +28,6 @@ LCDOutput::LCDOutput(int width, int height, int index){
   LineBuffer* str2;
   std::string emptystring = "";
 
-
   if(width > 0){
     this->width = width;
   }else{
