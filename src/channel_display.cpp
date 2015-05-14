@@ -43,6 +43,12 @@ ChannelDisplay::ChannelDisplay(){
   mc = this;
 
   this->input[0]->addMessageCallback(&MidiCallback::midiCallback, mc);
+
+  if(this->initGPIO()){
+    this->enableOutputs();
+  }else{
+    this->disableOutputs();
+  }
 }
 
 
