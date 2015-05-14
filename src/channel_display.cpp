@@ -149,6 +149,48 @@ bool ChannelDisplay::initGPIO(){
 
   return true;
 }
+
+
+/**\fn ChannelDisplay::enableOutputs
+ *
+ * Enables the outputs
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void ChannelDisplay::enableOutputs(){
+  unsigned int i;
+
+  for(i = 0; i < this->output.size(); i++){
+    this->output[i]->enableOutput();
+  }
+
+  std::cout << this->output.size() << " outputs enabled\n";
+}
+
+
+/**\fn ChannelDisplay::disableOutputs
+ *
+ * Disables the outputs
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void ChannelDisplay::disableOutputs(){
+  unsigned int i;
+
+  for(i = 0; i < this->output.size(); i++){
+    this->output[i]->disableOutput();
+  }
+
+  std::cout << this->output.size() << " outputs disabled\n";
+}
+
+
 /**\fn main
  *
  * Standard application entry point
