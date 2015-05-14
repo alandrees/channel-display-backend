@@ -24,6 +24,7 @@ class LCDOutput : Output{
   int output_number; /**determines the LCD index to output to*/
   int height; /**height of the device, in lines*/
   int width; /**width of the device, in characters*/
+  bool enable_output; /**set to false if there is a problem bringing up the GPIO interface*/
   bool outputToLCD(int, std::string);
 
 public:
