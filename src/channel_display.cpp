@@ -61,7 +61,11 @@ ChannelDisplay::~ChannelDisplay(){
  *
  * Callback to be executed on midi receipt
  *
- * @param message (midi_message) midi message structure for the message
+ * @param ch (int) channel (device)
+ * @param type (int) message type
+ * @param pos (int) position
+ * @param line (int) line
+ * @param character (char) character
  *
  * @returns None
  */
