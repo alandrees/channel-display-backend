@@ -147,10 +147,9 @@ void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void 
   msg.msg[1] = (*message)[1];
   msg.msg[2] = (*message)[2];
 
-  std::list<CallbackMessage>::iterator i = input_object->message_callbacks.begin();
+  std::list<CallbackMessage>::iterator i;
 
-  for(; i != input_object->message_callbacks.end(); ++i){
-    //pass midi_message to the functor
+  for(i = input_object->message_callbacks.begin(); i != input_object->message_callbacks.end(); ++i){
   }
 
 }
