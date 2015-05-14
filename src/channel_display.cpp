@@ -35,8 +35,8 @@ ChannelDisplay::ChannelDisplay(){
 
   LCDOutput *x = 0;
 
-  for(int i = 0; i < 8; i++){
-    x = new LCDOutput(20, 4, i);
+  for(int i = 0; i < LCD_COUNT; i++){
+    x = new LCDOutput(LCD_WIDTH, LCD_HEIGHT, i);
     this->output.push_back(x);
   }
 
