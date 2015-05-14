@@ -256,5 +256,11 @@ void LCDOutput::disableOutput(){
  */
 
 bool LCDOutput::outputToLCD(int line, std::string text){
-  return false;
+  if(LCDOutput::enable_output == true){
+
+  }else{
+    return false;
+  }
+
+  return true;
 }
