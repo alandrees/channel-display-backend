@@ -16,6 +16,7 @@
 
 class MidiCallback{
 public:
+  virtual ~MidiCallback(){};
   virtual void midiCallback(int ch, int type, int pos, int line, char character){throw 20;}
 };
 
