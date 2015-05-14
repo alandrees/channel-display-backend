@@ -98,6 +98,45 @@ void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char char
 }
 
 
+
+/**\fn ChannelDisplay::initGPIO
+ *
+ * Initializes the Raspberry Pi's GPIO
+ *
+ * @param None
+ *
+ * @returns (bool) true if GPIO setup was ok, false otherwise
+ */
+
+bool ChannelDisplay::initGPIO(){
+  wiringPiSetupSys();
+
+  std::chrono::milliseconds timespan(1000);
+
+  std::cout << "Bringing Up GPIO Interface...";
+
+  //export the pins
+  system("echo 7 > /sys/class/gpio/export");
+  system("echo 8 > /sys/class/gpio/export");
+  system("echo 25 > /sys/class/gpio/export");
+  system("echo 24 > /sys/class/gpio/export");
+  system("echo 23 > /sys/class/gpio/export");
+  system("echo 18 > /sys/class/gpio/export");
+
+  std::this_thread::sleep_for(timespan);
+
+  //set the pin direction
+  system("echo out > /sys/class/gpio/gpio7/direction");
+  system("echo out > /sys/class/gpio/gpio8/direction");
+  system("echo out > /sys/class/gpio/gpio25/direction");
+  system("echo out > /sys/class/gpio/gpio24/direction");
+  system("echo out > /sys/class/gpio/gpio23/direction");
+  system("echo out > /sys/class/gpio/gpio18/direction");
+
+  std::cout << "done!\n";
+
+  return true;
+}
 /**\fn main
  *
  * Standard application entry point
