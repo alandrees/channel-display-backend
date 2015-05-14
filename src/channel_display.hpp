@@ -15,6 +15,11 @@
 
 #ifndef CHANNEL_DISPLAY_HPP
 #define CHANNEL_DISPLAY_HPP
+
+#define LCD_COUNT 2
+#define LCD_WIDTH 20
+#define LCD_HEIGHT 4
+
 class ChannelDisplay : MidiCallback{
   enum command : int {
     ADD_CHARACTER=0xb,
