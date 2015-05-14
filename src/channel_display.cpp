@@ -27,7 +27,7 @@ ChannelDisplay::ChannelDisplay(){
   MidiInput* in = 0;
   MidiCallback* mc = 0;
 
-  in = new MidiInput();
+  in = new MidiInput(1);
 
   this->input.push_back(in);
 
