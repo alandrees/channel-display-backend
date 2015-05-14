@@ -28,7 +28,7 @@ class ChannelDisplay : MidiCallback{
 public:
   ChannelDisplay();
   ~ChannelDisplay();
-  void midiCallback(midi_message);
+  void midiCallback(int, int, int, int, char);
 };
 
 int main(int, char**);
