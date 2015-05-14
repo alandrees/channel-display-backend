@@ -225,6 +225,26 @@ void LCDOutput::enableOutput(){
 
   this->enable_output = true;
 }
+
+
+/**\fn LCDOutput::disableOutput()
+ *
+ * Disables the output
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::disableOutput(){
+  if(this->enable_output != false){
+    this->clearAll();
+  }
+
+  this->enable_output = false;
+}
+
+
 /**\fn LCDOutput::outputToLCD
  *
  * Logic to send the data to the LCD screen
