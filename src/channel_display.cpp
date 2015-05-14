@@ -62,6 +62,12 @@ ChannelDisplay::ChannelDisplay(){
  */
 
 ChannelDisplay::~ChannelDisplay(){
+  system("echo 7 > /sys/class/gpio/unexport");
+  system("echo 8 > /sys/class/gpio/unexport");
+  system("echo 25 > /sys/class/gpio/unexport");
+  system("echo 24 > /sys/class/gpio/unexport");
+  system("echo 23 > /sys/class/gpio/unexport");
+  system("echo 18 > /sys/class/gpio/unexport");
 }
 
 
