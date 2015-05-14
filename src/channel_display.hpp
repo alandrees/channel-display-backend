@@ -29,6 +29,7 @@ class ChannelDisplay : MidiCallback{
 
   std::vector<MidiInput*>  input; /**Input object**/
   std::vector<LCDOutput*> output; /**Output object**/
+  bool initGPIO();
 
 public:
   ChannelDisplay();
