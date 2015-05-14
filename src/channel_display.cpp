@@ -14,6 +14,7 @@
 #include "lcd_output.hpp"
 #include "channel_display.hpp"
 #include "callback.hpp"
+#include "wiringPi.h"
 
 /**\fn ChannelDisplay::ChannelDisplay
  *
