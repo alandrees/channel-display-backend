@@ -35,6 +35,8 @@ public:
   ChannelDisplay();
   ~ChannelDisplay();
   void midiCallback(int, int, int, int, char);
+  void enableOutputs();
+  void disableOutputs();
 };
 
 int main(int, char**);
