@@ -209,6 +209,22 @@ VectorBuffer LCDOutput::getCurrentOutput(){
 }
 
 
+/**\fn LCDOutput::enableOutput()
+ *
+ * Enables the output
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::enableOutput(){
+  if(this->enable_output != true){
+    this->clearAll();
+  }
+
+  this->enable_output = true;
+}
 /**\fn LCDOutput::outputToLCD
  *
  * Logic to send the data to the LCD screen
