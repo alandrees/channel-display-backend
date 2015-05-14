@@ -37,5 +37,7 @@ public:
   void clearBuffer(int);
   void clearAll();
   VectorBuffer getCurrentOutput();
+  void enableOutput();
+  void disableOutput();
 };
 #endif
