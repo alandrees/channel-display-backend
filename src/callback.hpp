@@ -16,8 +16,8 @@
 
 class MidiCallback{
 public:
-  void midiCallback(std::vector<unsigned char>*){throw 20;}
+  virtual void midiCallback(int ch, int type, int pos, int line, char character){throw 20;}
 };
 
-typedef void (MidiCallback::*output_callback)(std::vector<unsigned char>*); /** typedef defining a type for the midiCallback object method pointer*/
+typedef void (MidiCallback::*output_callback)(int, int, int, int, char); /** typedef defining a type for the midiCallback object method pointer*/
 #endif
