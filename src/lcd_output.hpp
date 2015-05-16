@@ -64,7 +64,15 @@ class LCDOutput : Output{
   int height; /**height of the device, in lines*/
   int width; /**width of the device, in characters*/
   bool enable_output; /**set to false if there is a problem bringing up the GPIO interface*/
+
   bool outputToLCD(int, std::string);
+  void toggleCmd();
+  void toggleChar();
+  void sendCmd(unsigned char, bool init = false);
+  void sendChar(unsigned char);
+  void sendBits(bitfield, bool);
+  void sendNibble();
+  void initializeLCD();
 
 public:
   LCDOutput(int, int, int);
