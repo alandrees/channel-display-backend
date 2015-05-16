@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 #include "RtMidi.h"
 #include "input.hpp"
 #include "output.hpp"
