@@ -267,8 +267,8 @@ void LCDOutput::disableOutput(){
  *
  * Logic to send the data to the LCD screen
  *
- * @param line (int)
- * @param text (std::string)
+ * @param line (int) line to output
+ * @param text (std::string) string of text to output
  *
  * @returns (bool) True on success, False on any failure
  */
