@@ -16,7 +16,7 @@
 #ifndef CHANNEL_DISPLAY_HPP
 #define CHANNEL_DISPLAY_HPP
 
-#define LCD_COUNT 2
+#define LCD_COUNT 1
 #define LCD_WIDTH 20
 #define LCD_HEIGHT 4
 
