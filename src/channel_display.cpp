@@ -63,17 +63,7 @@ ChannelDisplay::ChannelDisplay(){
 
 ChannelDisplay::~ChannelDisplay(){
   for(unsigned int i = 0; i < this->output.size(); i++){
-    this->output[ch]->clearBuffer();
-
-    this->output[ch]->pushToBuffer(0,0,"O");
-    this->output[ch]->pushToBuffer(0,1,"F");
-    this->output[ch]->pushToBuffer(0,2,"F");
-    this->output[ch]->pushToBuffer(0,3,"L");
-    this->output[ch]->pushToBuffer(0,4,"I");
-    this->output[ch]->pushToBuffer(0,5,"N");
-    this->output[ch]->pushToBuffer(0,6,"E");
-
-    this->output[ch]->flushAll();
+    this->output[i]->clearAll();
   }
 
   digitalWrite(LCD_RS, 0);
