@@ -498,3 +498,33 @@ void LCDOutput::initializeLCD(){
   std::this_thread::sleep_for(std::chrono::microseconds(60));
 
 }
+
+
+/**\fn LCDOutput::sendNibble
+ *
+ * Sends the nibble currently output to the GPIO
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::sendNibble(){
+  int i = 1;
+
+  if(getenv(LED_DEBUG)){
+    i = 2000000;
+  }
+
+  std::this_thread::sleep_for(std::chrono::microseconds(100));
+
+  digitalWrite(LCD_ES, 1);
+  std::this_thread::sleep_for(std::chrono::microseconds(i));
+
+  digitalWrite(LCD_ES, 0);
+  std::this_thread::sleep_for(std::chrono::microseconds(100));
+
+  if(getenv(LED_DEBUG)){
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+  }
+}
