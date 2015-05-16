@@ -332,3 +332,27 @@ void LCDOutput::toggleChar(){
   digitalWrite(LCD_RS, 1);
   std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
+
+
+/**\fn LCDOutput::sendCmd
+ *
+ * Sets the command
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::sendCmd(unsigned char cmd, bool init){
+  bitfield b;
+  b.byte = cmd;
+
+  if(getenv(LCD_DEBUG)){
+    std::cout << "sendCmd " << std::hex << (int)cmd << " ";
+    std::cout << b.pins.b7 << b.pins.b6 << b.pins.b5 << b.pins.b4 << b.pins.b3 << b.pins.b2 << b.pins.b1 << b.pins.b0 << "\n";
+  }
+
+  this->toggleCmd();
+
+  this->sendBits(b, init);
+}
