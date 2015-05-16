@@ -317,3 +317,18 @@ void LCDOutput::toggleCmd(){
   digitalWrite(LCD_RS, 0);
   std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
+
+
+/**\fn LCDOutput::toggleChar
+ *
+ * Toggles the RS pin to character mode
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::toggleChar(){
+  digitalWrite(LCD_RS, 1);
+  std::this_thread::sleep_for(std::chrono::microseconds(10));
+}
