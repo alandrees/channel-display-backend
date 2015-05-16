@@ -97,6 +97,15 @@ void LCDOutput::flushBuffer(int index){
   }else{
     return;
   }
+
+  for(int i = 0; i < this->width; i++){
+    outputstring = outputstring + this->line_buffers[index]->at(i);
+  }
+
+  this->outputToLCD(index, outputstring);
+
+  //this->copyToOutput
+  //this->blankBuffer
 }
 
 
