@@ -356,3 +356,27 @@ void LCDOutput::sendCmd(unsigned char cmd, bool init){
 
   this->sendBits(b, init);
 }
+
+
+/**\fn LCDOutput::sendChar
+ *
+ * Send a character to the LCD unit
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::sendChar(unsigned char character){
+  bitfield b;
+  b.byte = character;
+
+  if(getenv(LCD_DEBUG)){
+    std::cout << "sendChar: " << character << " " << std::hex << (int)character << " ";
+    std::cout << b.pins.b7 << b.pins.b6 << b.pins.b5 << b.pins.b4 << b.pins.b3 << b.pins.b2 << b.pins.b1 << b.pins.b0 << "\n";
+  }
+
+  this->toggleChar();
+
+  this->sendBits(b, false);
+}
