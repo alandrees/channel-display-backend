@@ -9,7 +9,10 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <chrono>
+#include <thread>
 #include "lcd_output.hpp"
+#include "wiringPi.h"
 
 /**\fn LCDOutput::LCDOutput
  *
