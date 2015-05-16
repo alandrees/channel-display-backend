@@ -380,3 +380,64 @@ void LCDOutput::sendChar(unsigned char character){
 
   this->sendBits(b, false);
 }
+
+
+/**\fn LCDOutput::sendBits
+ *
+ * Set the output pins to their corresponding 4-bit chunk
+ *
+ * @param b (bitfield) bitfield union representing the field
+ * @param init (bool) flag determining if we should send all 8 bits in 4-bit mode, or just 4 bits (in 8-bit mode for initialization)
+ *
+ * @returns None
+ */
+
+void LCDOutput::sendBits(bitfield b, bool init){
+  digitalWrite(LCD_D4, 0);
+  digitalWrite(LCD_D5, 0);
+  digitalWrite(LCD_D6, 0);
+  digitalWrite(LCD_D7, 0);
+
+  if(b.pins.b4){
+    digitalWrite(LCD_D4, 1);
+  }
+
+  if(b.pins.b5){
+    digitalWrite(LCD_D5, 1);
+  }
+
+  if(b.pins.b6){
+    digitalWrite(LCD_D6, 1);
+  }
+
+  if(b.pins.b7){
+    digitalWrite(LCD_D7, 1);
+  }
+
+  this->sendNibble();
+
+    if(!init){
+    digitalWrite(LCD_D4, 0);
+    digitalWrite(LCD_D5, 0);
+    digitalWrite(LCD_D6, 0);
+    digitalWrite(LCD_D7, 0);
+
+    if(b.pins.b0){
+      digitalWrite(LCD_D4, 1);
+    }
+
+    if(b.pins.b1){
+      digitalWrite(LCD_D5, 1);
+    }
+
+    if(b.pins.b2){
+      digitalWrite(LCD_D6, 1);
+    }
+
+    if(b.pins.b3){
+      digitalWrite(LCD_D7, 1);
+    }
+
+    this->sendNibble();
+  }
+}
