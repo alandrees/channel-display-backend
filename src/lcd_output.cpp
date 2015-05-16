@@ -93,7 +93,7 @@ void LCDOutput::flushBuffer(int index){
   LineBuffer* buffervector;
 
   if(index >= 0){
-    buffervector = this->line_buffers.at(index);
+    buffervector = this->line_buffers[index];
   }else{
     return;
   }
