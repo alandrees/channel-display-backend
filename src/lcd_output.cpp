@@ -274,7 +274,27 @@ void LCDOutput::disableOutput(){
  */
 
 bool LCDOutput::outputToLCD(int line, std::string text){
+  int line_addr = 0;
+
   if(LCDOutput::enable_output == true){
+    if(line == 0){
+      line_addr = LINE_1;
+    }else if(line == 1){
+      line_addr = LINE_2;
+    }else if(line == 2){
+      line_addr = LINE_3;
+    }else if(line == 3){
+      line_addr = LINE_4;
+    }
+    if(getenv(LCD_DEBUG)){
+      std::cout << "LINE CMD" << line << "\n";
+    }
+
+    this->sendCmd(line_addr);
+
+    for(unsigned int i = 0; i < text.length(); i++){
+      this->sendChar((unsigned char)text[i]);
+    }
 
   }else{
     return false;
