@@ -441,3 +441,59 @@ void LCDOutput::sendBits(bitfield b, bool init){
     this->sendNibble();
   }
 }
+
+/**\fn LCDOutput::initializeLCD
+ *
+ * Send initialization commands to the LCD screen
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::initializeLCD(){
+  std::cout << "initalizeLCD #" << this->output_number << "\n";
+
+  if(getenv(LCD_DEBUG)){
+    std::cout << "LCD DEBUG ENABLED\n";
+  }
+
+  if(getenv(LED_DEBUG)){
+    std::cout << "LED DEBUG ENABLED\n";
+  }
+
+  std::this_thread::sleep_for(std::chrono::microseconds(100000));
+
+  this->sendCmd((unsigned char)0b00111111, true); //fs
+  std::this_thread::sleep_for(std::chrono::microseconds(4500));
+
+  this->sendCmd((unsigned char)0b00111111, true); //fs
+  std::this_thread::sleep_for(std::chrono::microseconds(120));
+
+  this->sendCmd((unsigned char)0b00111111, true);  //fs
+  std::this_thread::sleep_for(std::chrono::microseconds(120));
+
+  this->sendCmd((unsigned char)0b00100000, true); //enter 4bit mode
+  std::this_thread::sleep_for(std::chrono::microseconds(120));
+
+  /*4bit mode starts here*/
+
+  this->sendCmd((unsigned char)0b00101000); //function set
+  std::this_thread::sleep_for(std::chrono::microseconds(60));
+
+  this->sendCmd((unsigned char)0b00001000); //display on/off
+  std::this_thread::sleep_for(std::chrono::microseconds(60));
+
+  this->sendCmd((unsigned char)0b00000001); //clear display
+  std::this_thread::sleep_for(std::chrono::microseconds(3500));
+
+  this->sendCmd((unsigned char)0b00000010); //return cursor home
+  std::this_thread::sleep_for(std::chrono::microseconds(3500));
+
+  this->sendCmd((unsigned char)0b00000111); //entry mode set
+  std::this_thread::sleep_for(std::chrono::microseconds(60));
+
+  this->sendCmd((unsigned char)0b00001100); //display on/off
+  std::this_thread::sleep_for(std::chrono::microseconds(60));
+
+}
