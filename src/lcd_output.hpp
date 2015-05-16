@@ -43,6 +43,20 @@
 typedef std::vector<std::string> LineBuffer;
 typedef std::vector<LineBuffer*> VectorBuffer;
 
+union bitfield{
+  struct{
+    unsigned int b0 : 1;
+    unsigned int b1 : 1;
+    unsigned int b2 : 1;
+    unsigned int b3 : 1;
+    unsigned int b4 : 1;
+    unsigned int b5 : 1;
+    unsigned int b6 : 1;
+    unsigned int b7 : 1;
+  } pins;
+  unsigned char byte;
+};
+
 class LCDOutput : Output{
   VectorBuffer line_buffers; /**current buffer filled by the updated input*/
   VectorBuffer current_output; /**current output buffer filled by flipping the line_buffer to the LCD output*/
