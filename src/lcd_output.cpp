@@ -206,11 +206,9 @@ void LCDOutput::clearBuffer(int index){
  */
 
 void LCDOutput::clearAll(){
-  /*
   for(int i = 0; i < this->height; i++){
     this->clearBuffer(i);
   }
-  */
 }
 
 
