@@ -145,7 +145,11 @@ void LCDOutput::flushAll(){
  */
 
 void LCDOutput::pushToBuffer(int line, int position, unsigned char character){
-  //this->line_buffers[buffer] = character;
+  std::string newchar = "";
+
+  newchar = character;
+
+  this->line_buffers[line]->at(position) = newchar;
 }
 
 
