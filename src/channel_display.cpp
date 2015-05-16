@@ -103,21 +103,10 @@ void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char char
     this->output[ch]->pushToBuffer(line,
 				   pos,
 				   character);
-    /*
-    std::cout << "Add character " << character;
-    std::cout << " to output " << ch;
-    std::cout << " (" << " " << line << ", " << pos << ")\n";
-    */
   }else if(type == CLEAR_BUFFER){
     this->output[ch]->clearAll();
-    /*
-    std::cout << "Clear the output buffer for output " << ch << "\n";
-    */
   }else if(type == FLUSH_BUFFER){
     this->output[ch]->flushAll();
-    /*
-    std::cout << "Flush the output buffer for output " << ch << "\n";
-    */
   }else{
     std::cout << std::hex << (int)type << " is not a command.\n";
   }
