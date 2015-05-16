@@ -147,12 +147,10 @@ void MidiInput::fireMessageEvent(double deltatime, rtmidi_message message, void 
   msg.msg[1] = (*message)[1];
   msg.msg[2] = (*message)[2];
 
-  std::list<CallbackMessage>::iterator i;
-
   CallbackMessage cb;
 
-  for(i = input_object->message_callbacks.begin(); i != input_object->message_callbacks.end(); ++i){
-    cb = *i;
+  for(unsigned int i = 0; i != input_object->message_callbacks.size(); i++){
+    cb = input_object->message_callbacks[i];
 
     (cb.o->*cb.cb)(msg.message.channel,
 		   msg.message.msgtype,
