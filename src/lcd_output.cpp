@@ -119,11 +119,17 @@ void LCDOutput::flushBuffer(int index){
  */
 
 void LCDOutput::flushAll(){
-  /*
   for(int i = 0; i < this->height; i++){
     this->flushBuffer(i);
   }
-  */
+
+  this->sendCmd(0b00000010);
+
+  digitalWrite(LCD_D4, 0);
+  digitalWrite(LCD_D5, 0);
+  digitalWrite(LCD_D6, 0);
+  digitalWrite(LCD_D7, 0);
+
 }
 
 
