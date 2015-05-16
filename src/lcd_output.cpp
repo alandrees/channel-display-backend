@@ -167,7 +167,6 @@ void LCDOutput::bulkUpdate(VectorBuffer full_buffer, bool flush_now){
   /*
   this->clearAll();
 
-  //fixme: need to get iterators instead
   for(int i = 0; i < this->height; i++){
     for(int j = 0; i < this->width; j++){
       this->line_buffers[i][j] = full_buffer[i][j];
