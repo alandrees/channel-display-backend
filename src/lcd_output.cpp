@@ -190,12 +190,11 @@ void LCDOutput::bulkUpdate(VectorBuffer full_buffer, bool flush_now){
  */
 
 void LCDOutput::clearBuffer(int index){
-  /*
   for(int i = 0; i < this->width; i++){
-    *(this->line_buffers->at(index)) = ' ';
+    this->line_buffers[index]->at(i) = ' ';
   }
-  */
 }
+
 
 /**\fn LCDOutput::clearAll
  *
