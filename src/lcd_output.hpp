@@ -40,6 +40,9 @@
 #define LCD_CHAR 1
 #define LCD_CMD 0
 
+#define LCD_DEBUG "LCD_DEBUG"
+#define LED_DEBUG "LED_DEBUG"
+
 typedef std::vector<std::string> LineBuffer;
 typedef std::vector<LineBuffer*> VectorBuffer;
 
