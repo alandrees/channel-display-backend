@@ -124,29 +124,35 @@ void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char char
  */
 
 bool ChannelDisplay::initGPIO(){
-  wiringPiSetupSys();
-
-  std::chrono::milliseconds timespan(1000);
-
   std::cout << "Bringing Up GPIO Interface..." << std::flush;
 
-  //export the pins
-  system("echo 7 > /sys/class/gpio/export");
-  system("echo 8 > /sys/class/gpio/export");
-  system("echo 25 > /sys/class/gpio/export");
-  system("echo 24 > /sys/class/gpio/export");
-  system("echo 23 > /sys/class/gpio/export");
-  system("echo 18 > /sys/class/gpio/export");
+  wiringPiSetup();
 
-  std::this_thread::sleep_for(timespan);
+  pinMode(11, OUTPUT);
 
-  //set the pin direction
-  system("echo out > /sys/class/gpio/gpio7/direction");
-  system("echo out > /sys/class/gpio/gpio8/direction");
-  system("echo out > /sys/class/gpio/gpio25/direction");
-  system("echo out > /sys/class/gpio/gpio24/direction");
-  system("echo out > /sys/class/gpio/gpio23/direction");
-  system("echo out > /sys/class/gpio/gpio18/direction");
+  pinMode(10, OUTPUT);
+
+  pinMode(6, OUTPUT);
+
+  pinMode(5, OUTPUT);
+
+  pinMode(4, OUTPUT);
+
+  pinMode(1, OUTPUT);
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+  pullUpDnControl(11, PUD_DOWN);
+
+  pullUpDnControl(10, PUD_DOWN);
+
+  pullUpDnControl(6, PUD_DOWN);
+
+  pullUpDnControl(5, PUD_DOWN);
+
+  pullUpDnControl(4, PUD_DOWN);
+
+  pullUpDnControl(1, PUD_DOWN);
 
   std::cout << "done!\n";
 
