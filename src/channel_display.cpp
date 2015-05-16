@@ -62,7 +62,7 @@ ChannelDisplay::ChannelDisplay(){
  */
 
 ChannelDisplay::~ChannelDisplay(){
-  for(int i = 0; i < this->output.size(); i++){
+  for(unsigned int i = 0; i < this->output.size(); i++){
     this->output[ch]->clearBuffer();
 
     this->output[ch]->pushToBuffer(0,0,"O");
