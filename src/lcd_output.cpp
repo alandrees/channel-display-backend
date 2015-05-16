@@ -302,3 +302,18 @@ bool LCDOutput::outputToLCD(int line, std::string text){
 
   return true;
 }
+
+
+/**\fn LCDOutput::toggleCmd
+ *
+ * Toggles the RS pin to command mode
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::toggleCmd(){
+  digitalWrite(LCD_RS, 0);
+  std::this_thread::sleep_for(std::chrono::microseconds(10));
+}
