@@ -15,6 +15,31 @@
 #ifndef LCD_OUTPUT_HPP
 #define LCD_OUTPUT_HPP
 
+#define LINE_1 0x80
+#define LINE_2 0xC0
+#define LINE_3 0x94
+#define LINE_4 0xD4
+
+/*
+#define LINE_1 0b10000000
+#define LINE_2 0b10100000
+#define LINE_3 0b10010100
+#define LINE_4 0b11010100
+*/
+
+#define LCD_RS 11
+#define LCD_ES 10
+#define LCD_D4 6
+#define LCD_D5 5
+#define LCD_D6 4
+#define LCD_D7 1
+
+#define EPULSE 50 //in microseconds
+#define EDELAY 50 //in microseconds
+
+#define LCD_CHAR 1
+#define LCD_CMD 0
+
 typedef std::vector<std::string> LineBuffer;
 typedef std::vector<LineBuffer*> VectorBuffer;
 
