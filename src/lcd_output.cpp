@@ -239,6 +239,7 @@ VectorBuffer LCDOutput::getCurrentOutput(){
 void LCDOutput::enableOutput(){
   if(this->enable_output != true){
     this->clearAll();
+    this->initializeLCD();
   }
 
   this->enable_output = true;
