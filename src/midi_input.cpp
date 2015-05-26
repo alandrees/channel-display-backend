@@ -31,7 +31,7 @@ MidiInput::MidiInput(int port, RtMidiIn* midiin){
 
   this->midi_instance = port;
 
-  if(midiin->getPortCount() <= 0){
+  if(midiin->getPortCount() <= 1){
     std::cout << "Insufficent MIDI Ports.  Exiting.\n";
     exit( EXIT_FAILURE );
   }
@@ -65,7 +65,7 @@ MidiInput::MidiInput(int port){
 
   this->midi_instance = port;
 
-  if(midiin->getPortCount() <= 0){
+  if(midiin->getPortCount() <= 1){
     std::cout << "Insufficent MIDI Ports.  Exiting.\n";
     exit( EXIT_FAILURE );
   }
@@ -99,7 +99,7 @@ MidiInput::MidiInput(){
 
   this->midi_instance = 0;
 
-  if(midiin->getPortCount() <= 0){
+  if(midiin->getPortCount() <= 1){
     std::cout << "Insufficent MIDI Ports.  Exiting.\n";
     exit( EXIT_FAILURE );
   }
