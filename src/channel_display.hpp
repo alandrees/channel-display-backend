@@ -38,6 +38,4 @@ public:
   void enableOutputs();
   void disableOutputs();
 };
-
-int main(int, char**);
 #endif
