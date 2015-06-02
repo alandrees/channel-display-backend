@@ -13,7 +13,7 @@ main: channel_display.o lcd_output.o output.o midi_input.o input.o
 
 #application object
 channel_display.o: lcd_output.o output.o midi_input.o input.o
-	$(CC) $(CFLAGS) -c lcd_output.o output.o midi_input.o input.o channel_display.cpp -o channel_display.o
+	$(CC) $(CFLAGS) -c channel_display.cpp -o channel_display.o
 
 midi_input.o: input.o output.o
 	$(CC) $(CFLAGS) -c midi_input.cpp -o midi_input.o
