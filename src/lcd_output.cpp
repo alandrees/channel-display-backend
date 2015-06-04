@@ -121,6 +121,7 @@ void LCDOutput::flushBuffer(int index){
  */
 
 void LCDOutput::flushAll(){
+
   for(int i = 0; i < this->height; i++){
     this->flushBuffer(i);
   }
@@ -289,6 +290,7 @@ bool LCDOutput::outputToLCD(int line, std::string text){
     }else if(line == 3){
       line_addr = LINE_4;
     }
+
     if(getenv(LCD_DEBUG)){
       std::cout << "LINE CMD" << line << "\n";
     }
