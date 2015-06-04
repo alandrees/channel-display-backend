@@ -131,6 +131,11 @@ bool ChannelDisplay::initGPIO(){
 
   pinMode(1, OUTPUT);
 
+  /*Address Select pins*/
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(7, OUTPUT);
+
   std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
   pullUpDnControl(11, PUD_DOWN);
@@ -144,6 +149,12 @@ bool ChannelDisplay::initGPIO(){
   pullUpDnControl(4, PUD_DOWN);
 
   pullUpDnControl(1, PUD_DOWN);
+
+  pullUpDnControl(8, PUD_DOWN);
+
+  pullUpDnControl(9, PUD_DOWN);
+
+  pullUpDnControl(7, PUD_DOWN);
 
   std::cout << "done!\n";
 
