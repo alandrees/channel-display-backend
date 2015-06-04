@@ -20,13 +20,6 @@
 #define LINE_3 0x94
 #define LINE_4 0xD4
 
-/*
-#define LINE_1 0b10000000
-#define LINE_2 0b10100000
-#define LINE_3 0b10010100
-#define LINE_4 0b11010100
-*/
-
 #define LCD_RS 11
 #define LCD_ES 10
 #define LCD_D4 6
