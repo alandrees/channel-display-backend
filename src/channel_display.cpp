@@ -118,6 +118,7 @@ bool ChannelDisplay::initGPIO(){
 
   wiringPiSetup();
 
+  /*LCD Output pins*/
   pinMode(11, OUTPUT);
 
   pinMode(10, OUTPUT);
