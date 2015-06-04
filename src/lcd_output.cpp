@@ -508,7 +508,6 @@ void LCDOutput::initializeLCD(){
 
   this->sendCmd((unsigned char)0b00001100); //display on/off
   std::this_thread::sleep_for(std::chrono::microseconds(60));
-
 }
 
 
