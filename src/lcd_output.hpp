@@ -73,6 +73,7 @@ class LCDOutput : Output{
   void sendBits(bitfield, bool);
   void sendNibble();
   void initializeLCD();
+  void selectThis();
 
 public:
   LCDOutput(int, int, int);
