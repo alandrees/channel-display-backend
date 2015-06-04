@@ -528,3 +528,35 @@ void LCDOutput::sendNibble(){
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 }
+
+
+/**\fn LCDOutput::selectThis
+ *
+ * Function to set the address select bits for the current LCD output
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::selectThis(){
+
+  int bits[4];
+
+  int index = this->output_number;
+
+  for(int i = 0; i < 3; i++){
+    bits[i] = index & (1 << i) ? 1 : 0;
+  }
+
+  digitalWrite(LCD_RS, 0);
+  digitalWrite(LCD_ES, 0);
+  digitalWrite(LCD_D4, 0);
+  digitalWrite(LCD_D5, 0);
+  digitalWrite(LCD_D6, 0);
+  digitalWrite(LCD_D7, 0);
+
+  digitalWrite(AS_1, bits[0]);
+  digitalWrite(AS_2, bits[1]);
+  digitalWrite(AS_4, bits[2]);
+}
