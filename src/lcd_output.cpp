@@ -280,6 +280,10 @@ void LCDOutput::disableOutput(){
 bool LCDOutput::outputToLCD(int line, std::string text){
   int line_addr = 0;
 
+  if(getenv(LCD_DEBUG)){
+    std::cout << "LCD Output Number: " << this->output_number << " " << text << "\n";
+  }
+
   if(LCDOutput::enable_output == true){
     if(line == 0){
       line_addr = LINE_1;
