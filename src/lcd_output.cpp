@@ -487,6 +487,10 @@ void LCDOutput::initializeLCD(){
 
   /*4bit mode starts here*/
 
+  if(getenv(LCD_DEBUG)){
+    std::cout << "4BIT MODE ENABLE (DOUBLE CLK STROBE PER MSG)\n";
+  }
+
   this->sendCmd((unsigned char)0b00101000); //function set
   std::this_thread::sleep_for(std::chrono::microseconds(60));
 
