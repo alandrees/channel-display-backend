@@ -11,12 +11,13 @@
 #include <vector>
 #include "midi_input.hpp"
 #include "lcd_output.hpp"
+#include "lcd_backend.hpp"
 #include "callback.hpp"
 
 #ifndef CHANNEL_DISPLAY_HPP
 #define CHANNEL_DISPLAY_HPP
 
-#define LCD_COUNT 2
+#define LCD_COUNT 8
 #define LCD_WIDTH 20
 #define LCD_HEIGHT 4
 
