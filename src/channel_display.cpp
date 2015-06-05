@@ -96,7 +96,7 @@ void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char char
   }else if(type == CLEAR_BUFFER){
     this->output[ch]->clearAll();
   }else if(type == FLUSH_BUFFER){
-    this->output[ch]->flushAll();
+    this->lcd_queue.pushToQueue(this->output[ch]);
   }else{
     std::cout << std::hex << (int)type << " is not a command.\n";
   }
