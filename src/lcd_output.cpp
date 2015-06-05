@@ -571,3 +571,17 @@ void LCDOutput::selectThis(){
   digitalWrite(AS_2, bits[1]);
   digitalWrite(AS_4, bits[2]);
 }
+
+
+/**\fn LCDOutput::getOutputIndex
+ *
+ * Returns the output index of a given lcd output
+ *
+ * @param None
+ *
+ * @returns (int) integer representing the index of the lcd output object
+ */
+
+int LCDOutput::getOutputIndex(){
+  return this->output_number;
+}
