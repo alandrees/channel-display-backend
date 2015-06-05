@@ -65,6 +65,7 @@ class LCDOutput : Output{
   bool enable_output; /**set to false if there is a problem bringing up the GPIO interface*/
 
   bool outputToLCD(int, std::string);
+  void copyToOutput();
   void toggleCmd();
   void toggleChar();
   void sendCmd(unsigned char, bool init = false);
