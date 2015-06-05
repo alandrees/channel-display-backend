@@ -472,6 +472,8 @@ void LCDOutput::initializeLCD(){
     std::cout << "LED DEBUG ENABLED\n";
   }
 
+  this->selectThis();
+
   std::this_thread::sleep_for(std::chrono::microseconds(100000));
 
   this->sendCmd((unsigned char)0b00111111, true); //fs
