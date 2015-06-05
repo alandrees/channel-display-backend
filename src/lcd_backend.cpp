@@ -41,3 +41,24 @@ LcdBackend::~LcdBackend(){
     std::cout << "Queue not Empty at destruction.\n";
   }
 }
+
+
+/**\fn LcdBackend::pushToQueue
+ *
+ * Pushes an LcdOutput object on to the queue for it to have it's output buffer flushed
+ *
+ * @param output (LcdOutput*) LcdOutput object pointer to push to the queue
+ *
+ * @returns None
+ */
+
+void LcdBackend::pushToQueue(LCDOutput* output){
+  LCDOutput* pop;
+  this->lcd_queue.push(output);
+
+  if(!this->busy){
+    pop = this->lcd_queue.front();
+    this->lcd_queue.pop();
+    this->fireObject(pop);
+  }
+}
