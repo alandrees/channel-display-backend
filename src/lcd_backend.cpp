@@ -25,3 +25,19 @@
 LcdBackend::LcdBackend(){
   this->busy = false;
 }
+
+
+/**\fn LcdBackend::~LcdBackend
+ *
+ * Lcd Backend object destructor
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+LcdBackend::~LcdBackend(){
+  if(!this->lcd_queue.empty()){
+    std::cout << "Queue not Empty at destruction.\n";
+  }
+}
