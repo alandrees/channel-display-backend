@@ -62,3 +62,29 @@ void LcdBackend::pushToQueue(LCDOutput* output){
     this->fireObject(pop);
   }
 }
+
+
+/**\fn LcdBackend::fireObject
+ *
+ * Handles the interaction with the LcdOutput object
+ *
+ * @param object (LcdOutput*)
+ *
+ * @returns None
+ */
+
+void LcdBackend::fireObject(LCDOutput* object){
+  LCDOutput* pop;
+  this->busy = true;
+
+  object->flushAll();
+
+  if(this->lcd_queue.size() > 0){
+    pop = this->lcd_queue.front();
+    this->lcd_queue.pop();
+    std::cout << pop->getOutputIndex() << "\n";
+    this->fireObject(pop);
+  }else{
+    this->busy = false;
+  }
+}
