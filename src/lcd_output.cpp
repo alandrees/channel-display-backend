@@ -585,3 +585,23 @@ void LCDOutput::selectThis(){
 int LCDOutput::getOutputIndex(){
   return this->output_number;
 }
+
+
+/**\fn LCDOutput::copyToOutput
+ *
+ * Copies the current buffer to the current output
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
+void LCDOutput::copyToOutput(){
+  /*
+  for(int i = 0; i < this->height; i++){
+    for(int j = 0; j < this->width; j++){
+      this->current_output[i][j] = this->line_buffers[i][j];
+    }
+  }
+  */
+}
