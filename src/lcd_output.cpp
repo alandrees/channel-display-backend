@@ -283,8 +283,6 @@ bool LCDOutput::outputToLCD(int line, std::string text){
     std::cout << "LCD Output Number: " << this->output_number << " " << text << "\n";
   }
 
-  this->selectThis();
-
   if(LCDOutput::enable_output == true){
     if(line == 0){
       line_addr = LINE_1;
