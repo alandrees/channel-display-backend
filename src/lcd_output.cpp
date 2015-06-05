@@ -102,8 +102,6 @@ void LCDOutput::flushBuffer(int index){
     outputstring = outputstring + this->line_buffers[index]->at(i);
   }
 
-  this->selectThis();
-
   this->outputToLCD(index, outputstring);
 
   //this->copyToOutput
