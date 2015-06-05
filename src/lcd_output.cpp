@@ -130,6 +130,8 @@ void LCDOutput::flushAll(){
   digitalWrite(LCD_D6, 0);
   digitalWrite(LCD_D7, 0);
 
+  this->copyToOutput();
+  this->clearAll();
 }
 
 
