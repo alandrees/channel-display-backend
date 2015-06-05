@@ -103,9 +103,6 @@ void LCDOutput::flushBuffer(int index){
   }
 
   this->outputToLCD(index, outputstring);
-
-  //this->copyToOutput
-  //this->blankBuffer
 }
 
 
