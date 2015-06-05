@@ -11,3 +11,7 @@
 #include <iostream>
 #include <queue>
 #include "lcd_output.hpp"
+
+#ifndef LCD_BACKEND_HPP
+#define LCD_BACKEND_HPP
+#endif
