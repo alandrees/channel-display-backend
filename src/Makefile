@@ -18,6 +18,9 @@ channel_display.o: lcd_output.o output.o midi_input.o input.o
 midi_input.o: input.o output.o
 	$(CC) $(CFLAGS) -c midi_input.cpp -o midi_input.o
 
+lcd_backend.o:
+	$(CC) $(CFLAGS) -c lcd_backend.cpp -o lcd_backend.o
+
 lcd_output.o: output.o
 	$(CC) $(CFLAGS) -c lcd_output.cpp -o lcd_output.o
 
