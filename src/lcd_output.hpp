@@ -11,7 +11,6 @@
 #include <vector>
 #include "output.hpp"
 
-
 #ifndef LCD_OUTPUT_HPP
 #define LCD_OUTPUT_HPP
 
