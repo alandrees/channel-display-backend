@@ -86,5 +86,6 @@ public:
   VectorBuffer getCurrentOutput();
   void enableOutput();
   void disableOutput();
+  int getOutputIndex();
 };
 #endif
