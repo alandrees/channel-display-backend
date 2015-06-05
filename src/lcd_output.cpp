@@ -555,6 +555,10 @@ void LCDOutput::sendNibble(){
 
 void LCDOutput::selectThis(){
 
+  if(getenv(LCD_DEBUG)){
+    std::cout << "Channel Select: " << this->output_number << "\n";
+  }
+
   int bits[4];
 
   int index = this->output_number;
