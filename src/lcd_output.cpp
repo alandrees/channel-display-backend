@@ -117,6 +117,8 @@ void LCDOutput::flushBuffer(int index){
 
 void LCDOutput::flushAll(){
 
+  this->selectThis();
+
   for(int i = 0; i < this->height; i++){
     this->flushBuffer(i);
   }
