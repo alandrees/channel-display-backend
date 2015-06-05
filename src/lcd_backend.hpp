@@ -14,4 +14,15 @@
 
 #ifndef LCD_BACKEND_HPP
 #define LCD_BACKEND_HPP
+class LcdBackend{
+  bool busy; /**flag to determine if the LCD Output bus is busy or not*/
+  std::queue<LCDOutput*> lcd_queue;
+  void fireObject(LCDOutput*);
+
+public:
+  LcdBackend();
+  ~LcdBackend();
+
+  void pushToQueue(LCDOutput*);
+};
 #endif
