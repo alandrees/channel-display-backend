@@ -117,8 +117,6 @@ void LCDOutput::flushBuffer(int index){
 
 void LCDOutput::flushAll(){
 
-  this->selectThis();
-
   for(int i = 0; i < this->height; i++){
     this->flushBuffer(i);
   }
@@ -470,8 +468,6 @@ void LCDOutput::initializeLCD(){
     std::cout << "LED DEBUG ENABLED\n";
   }
 
-  this->selectThis();
-
   std::this_thread::sleep_for(std::chrono::microseconds(100000));
 
   this->sendCmd((unsigned char)0b00111111, true); //fs
@@ -545,6 +541,7 @@ void LCDOutput::sendNibble(){
 /**\fn LCDOutput::selectThis
  *
  * Function to set the address select bits for the current LCD output
+ * DEPRECATED as of the I2C board revision
  *
  * @param None
  *
