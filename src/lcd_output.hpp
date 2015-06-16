@@ -19,16 +19,12 @@
 #define LINE_3 0x94
 #define LINE_4 0xD4
 
-#define LCD_RS 11
-#define LCD_ES 10
-#define LCD_D4 6
-#define LCD_D5 5
+#define LCD_RS 0
+#define LCD_ES 1
+#define LCD_D4 2
+#define LCD_D5 3
 #define LCD_D6 4
-#define LCD_D7 1
-
-#define AS_1 7
-#define AS_2 9
-#define AS_4 8
+#define LCD_D7 5
 
 #define EPULSE 50 //in microseconds
 #define EDELAY 50 //in microseconds
