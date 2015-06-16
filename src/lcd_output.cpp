@@ -123,11 +123,6 @@ void LCDOutput::flushAll(){
 
   this->sendCmd(0b00000010);
 
-  digitalWrite(LCD_D4, 0);
-  digitalWrite(LCD_D5, 0);
-  digitalWrite(LCD_D6, 0);
-  digitalWrite(LCD_D7, 0);
-
   this->copyToOutput();
   this->clearAll();
 }
