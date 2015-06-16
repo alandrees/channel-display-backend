@@ -25,6 +25,7 @@
 #define LCD_D5 3
 #define LCD_D6 4
 #define LCD_D7 5
+#define LCD_CX 6
 
 #define EPULSE 50 //in microseconds
 #define EDELAY 50 //in microseconds
