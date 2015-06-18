@@ -42,6 +42,7 @@ class ChannelDisplay : MidiCallback{
   int iotype; /**determines the io type to use: gpio, i2c or spi*/
   LcdBackend lcd_queue;
   bool initGPIO();
+  bool initI2C();
 
 public:
   ChannelDisplay();
