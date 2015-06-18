@@ -159,7 +159,6 @@ void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char char
 }
 
 
-
 /**\fn ChannelDisplay::initGPIO
  *
  * Initializes the Raspberry Pi's GPIO
