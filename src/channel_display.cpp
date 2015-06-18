@@ -217,6 +217,43 @@ bool ChannelDisplay::initGPIO(){
 }
 
 
+/**\fn ChannelDisplay::initI2C
+ *
+ * Initializes the I2C interface (with MCP23017 expanders)
+ *
+ * @param None
+ *
+ * @returns (bool) True if I2C setup was ok, false otherwise
+ */
+
+bool ChannelDisplay::initI2C(){
+  std::cout << "Bringing Up I2C Interface...\n" << std::flush;
+
+  int mcp_address = MCP_BASE_ADDRESS;
+  int base = MCP_PIN_BASE;
+  int mcp_count = LCD_COUNT / 2;
+  int basepin = 0;
+
+  wiringPiSetup();
+
+  for(int i = 0; i < mcp_count; i++){
+    basepin = base + (i * 16);
+    mcp23017Setup(basepin, mcp_address);
+
+    for(int j = 0; j < 16; j++){
+      pinMode(basepin + j, OUTPUT);
+      pullUpDnControl(basepin + j, PUD_DOWN);
+    }
+
+    std::cout << basepin << ": ";
+    std::cout << mcp_address << "done!\n";
+    mcp_address++;
+  }
+
+  return true;
+}
+
+
 /**\fn ChannelDisplay::enableOutputs
  *
  * Enables the outputs
