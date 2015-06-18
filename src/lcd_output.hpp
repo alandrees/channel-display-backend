@@ -102,5 +102,6 @@ public:
   void disableOutput();
   int getOutputIndex();
   int getPinCount();
+  void setOutputPins(int);
 };
 #endif
