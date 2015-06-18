@@ -27,6 +27,11 @@
  */
 
 ChannelDisplay::ChannelDisplay(){
+  this->iotype = I2C;
+  this->commonConstructor();
+}
+
+
 /**\fn ChannelDisplay::commonConstructor
  *
  * Common constructor functionality to be executed between all the overloaded constructors
