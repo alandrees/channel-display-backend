@@ -62,6 +62,8 @@ LCDOutput::LCDOutput(int width, int height, int index){
     this->current_output.push_back(str2);
   }
 
+  this->required_pins = LCD_PIN_COUNT;
+
   this->enable_output = false;
 }
 
