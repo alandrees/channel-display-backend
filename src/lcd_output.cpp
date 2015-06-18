@@ -318,7 +318,7 @@ bool LCDOutput::outputToLCD(int line, std::string text){
 
 void LCDOutput::toggleCmd(){
   digitalWrite(LCD_RS, 0);
-  std::this_thread::sleep_for(std::chrono::microseconds(10));
+  //std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
 
 
@@ -333,7 +333,7 @@ void LCDOutput::toggleCmd(){
 
 void LCDOutput::toggleChar(){
   digitalWrite(LCD_RS, 1);
-  std::this_thread::sleep_for(std::chrono::microseconds(10));
+  //std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
 
 
@@ -521,13 +521,13 @@ void LCDOutput::sendNibble(){
     i = 2000000;
   }
 
-  std::this_thread::sleep_for(std::chrono::microseconds(100));
+  //std::this_thread::sleep_for(std::chrono::microseconds(100));
 
   digitalWrite(LCD_ES, 1);
   std::this_thread::sleep_for(std::chrono::microseconds(i));
 
   digitalWrite(LCD_ES, 0);
-  std::this_thread::sleep_for(std::chrono::microseconds(100));
+  //std::this_thread::sleep_for(std::chrono::microseconds(100));
 
   if(getenv(LED_DEBUG)){
     std::this_thread::sleep_for(std::chrono::seconds(1));
