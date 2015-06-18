@@ -120,12 +120,14 @@ ChannelDisplay::~ChannelDisplay(){
     this->output[i]->clearAll();
   }
 
-  digitalWrite(LCD_RS, 0);
-  digitalWrite(LCD_ES, 0);
-  digitalWrite(LCD_D4, 0);
-  digitalWrite(LCD_D5, 0);
-  digitalWrite(LCD_D6, 0);
-  digitalWrite(LCD_D7, 0);
+  if(this->iotype == GPIO){
+    digitalWrite(LCD_RS, 0);
+    digitalWrite(LCD_ES, 0);
+    digitalWrite(LCD_D4, 0);
+    digitalWrite(LCD_D5, 0);
+    digitalWrite(LCD_D6, 0);
+    digitalWrite(LCD_D7, 0);
+  }
 }
 
 
