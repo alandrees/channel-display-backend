@@ -69,6 +69,14 @@ class LCDOutput : Output{
   int required_pins; /**number of output pins required for the LCD output**/
   bool enable_output; /**set to false if there is a problem bringing up the GPIO interface*/
 
+  int rs; /*rs wiringPi pin number*/
+  int es; /*es wiringPi pin number*/
+  int d4; /*d4 wiringPi pin number*/
+  int d5; /*d5 wiringPi pin number*/
+  int d6; /*d6 wiringPi pin number*/
+  int d7; /*d7 wiringPi pin number*/
+  int cx; /*cx wiringPi pin number*/
+
   bool outputToLCD(int, std::string);
   void copyToOutput();
   void toggleCmd();
