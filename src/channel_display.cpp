@@ -81,6 +81,12 @@ void ChannelDisplay::commonConstructor(){
 
   for(i = 0; i < LCD_COUNT; i++){
     x = new LCDOutput(LCD_WIDTH, LCD_HEIGHT, i);
+
+    if(this->iotype == I2C){
+      std::cout << "pin base [" << i << "]: " <<MCP_PIN_BASE + (i * 8);
+      x->setOutputPins(MCP_PIN_BASE + (i * 8));
+    }
+
     this->output.push_back(x);
   }
 
