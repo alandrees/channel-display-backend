@@ -67,6 +67,10 @@ void ChannelDisplay::commonConstructor(){
 
   LCDOutput *x = 0;
 
+  int lcd_count = LCD_COUNT;
+
+  int i = 0;
+
   for(i = 0; i < LCD_COUNT; i++){
     x = new LCDOutput(LCD_WIDTH, LCD_HEIGHT, i);
     this->output.push_back(x);
