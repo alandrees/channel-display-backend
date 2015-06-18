@@ -27,6 +27,15 @@
  */
 
 ChannelDisplay::ChannelDisplay(){
+/**\fn ChannelDisplay::commonConstructor
+ *
+ * Common constructor functionality to be executed between all the overloaded constructors
+ *
+ * @param None
+ *
+ * @returns None
+ */
+
 void ChannelDisplay::commonConstructor(){
   MidiInput* in = 0;
   MidiCallback* mc = 0;
