@@ -71,6 +71,9 @@ void ChannelDisplay::commonConstructor(){
 
   int i = 0;
 
+  if(lcd_count > 16){
+    lcd_count = 16;
+  }
   for(i = 0; i < LCD_COUNT; i++){
     x = new LCDOutput(LCD_WIDTH, LCD_HEIGHT, i);
     this->output.push_back(x);
