@@ -497,7 +497,7 @@ void LCDOutput::initializeLCD(){
   this->sendCmd((unsigned char)0b00000010); //return cursor home
   std::this_thread::sleep_for(std::chrono::microseconds(3500));
 
-  this->sendCmd((unsigned char)0b00000111); //entry mode set
+  this->sendCmd((unsigned char)0b00000110); //entry mode set
   std::this_thread::sleep_for(std::chrono::microseconds(60));
 
   this->sendCmd((unsigned char)0b00001100); //display on/off
