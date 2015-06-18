@@ -145,16 +145,20 @@ ChannelDisplay::~ChannelDisplay(){
  */
 
 void ChannelDisplay::midiCallback(int ch, int type, int pos, int line, char character){
-  if(type == ADD_CHARACTER){
-    this->output[ch]->pushToBuffer(line,
-				   pos,
-				   character);
-  }else if(type == CLEAR_BUFFER){
-    this->output[ch]->clearAll();
-  }else if(type == FLUSH_BUFFER){
-    this->lcd_queue.pushToQueue(this->output[ch]);
+  if(ch < this->output.size()){
+    if(type == ADD_CHARACTER){
+      this->output[ch]->pushToBuffer(line,
+				     pos,
+				     character);
+    }else if(type == CLEAR_BUFFER){
+      this->output[ch]->clearAll();
+    }else if(type == FLUSH_BUFFER){
+      this->lcd_queue.pushToQueue(this->output[ch]);
+    }else{
+      std::cout << std::hex << (int)type << " is not a command.\n";
+    }
   }else{
-    std::cout << std::hex << (int)type << " is not a command.\n";
+    std::cout << ch << " out of range.  Check DAW channel count.\n";
   }
 }
 
