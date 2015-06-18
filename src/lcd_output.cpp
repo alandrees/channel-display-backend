@@ -317,7 +317,7 @@ bool LCDOutput::outputToLCD(int line, std::string text){
  */
 
 void LCDOutput::toggleCmd(){
-  digitalWrite(LCD_RS, 0);
+  digitalWrite(this->rs, 0);
   //std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
 
@@ -332,7 +332,7 @@ void LCDOutput::toggleCmd(){
  */
 
 void LCDOutput::toggleChar(){
-  digitalWrite(LCD_RS, 1);
+  digitalWrite(this->rs, 1);
   //std::this_thread::sleep_for(std::chrono::microseconds(10));
 }
 
@@ -396,49 +396,49 @@ void LCDOutput::sendChar(unsigned char character){
  */
 
 void LCDOutput::sendBits(bitfield b, bool init){
-  digitalWrite(LCD_D4, 0);
-  digitalWrite(LCD_D5, 0);
-  digitalWrite(LCD_D6, 0);
-  digitalWrite(LCD_D7, 0);
+  digitalWrite(this->d4, 0);
+  digitalWrite(this->d5, 0);
+  digitalWrite(this->d6, 0);
+  digitalWrite(this->d7, 0);
 
   if(b.pins.b4){
-    digitalWrite(LCD_D4, 1);
+    digitalWrite(this->d4, 1);
   }
 
   if(b.pins.b5){
-    digitalWrite(LCD_D5, 1);
+    digitalWrite(this->d5, 1);
   }
 
   if(b.pins.b6){
-    digitalWrite(LCD_D6, 1);
+    digitalWrite(this->d6, 1);
   }
 
   if(b.pins.b7){
-    digitalWrite(LCD_D7, 1);
+    digitalWrite(this->d7, 1);
   }
 
   this->sendNibble();
 
-    if(!init){
-    digitalWrite(LCD_D4, 0);
-    digitalWrite(LCD_D5, 0);
-    digitalWrite(LCD_D6, 0);
-    digitalWrite(LCD_D7, 0);
+  if(!init){
+    digitalWrite(this->d4, 0);
+    digitalWrite(this->d5, 0);
+    digitalWrite(this->d6, 0);
+    digitalWrite(this->d7, 0);
 
     if(b.pins.b0){
-      digitalWrite(LCD_D4, 1);
+      digitalWrite(this->d4, 1);
     }
 
     if(b.pins.b1){
-      digitalWrite(LCD_D5, 1);
+      digitalWrite(this->d5, 1);
     }
 
     if(b.pins.b2){
-      digitalWrite(LCD_D6, 1);
+      digitalWrite(this->d6, 1);
     }
 
     if(b.pins.b3){
-      digitalWrite(LCD_D7, 1);
+      digitalWrite(this->d7, 1);
     }
 
     this->sendNibble();
@@ -502,6 +502,16 @@ void LCDOutput::initializeLCD(){
 
   this->sendCmd((unsigned char)0b00001100); //display on/off
   std::this_thread::sleep_for(std::chrono::microseconds(60));
+
+  //set all the pins low
+
+  digitalWrite(this->rs, 0);
+  digitalWrite(this->es, 0);
+  digitalWrite(this->d4, 0);
+  digitalWrite(this->d5, 0);
+  digitalWrite(this->d6, 0);
+  digitalWrite(this->d7, 0);
+
 }
 
 
@@ -523,10 +533,10 @@ void LCDOutput::sendNibble(){
 
   //std::this_thread::sleep_for(std::chrono::microseconds(100));
 
-  digitalWrite(LCD_ES, 1);
+  digitalWrite(this->es, 1);
   std::this_thread::sleep_for(std::chrono::microseconds(i));
 
-  digitalWrite(LCD_ES, 0);
+  digitalWrite(this->es, 0);
   //std::this_thread::sleep_for(std::chrono::microseconds(100));
 
   if(getenv(LED_DEBUG)){
