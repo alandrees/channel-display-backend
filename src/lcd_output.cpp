@@ -92,6 +92,7 @@ LCDOutput::~LCDOutput(){
 
 void LCDOutput::flushBuffer(int index){
   std::string outputstring = "";
+
   LineBuffer* buffervector;
 
   if(index >= 0){
@@ -298,7 +299,6 @@ bool LCDOutput::outputToLCD(int line, std::string text){
     for(unsigned int i = 0; i < text.length(); i++){
       this->sendChar((unsigned char)text[i]);
     }
-
   }else{
     return false;
   }
