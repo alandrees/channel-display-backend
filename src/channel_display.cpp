@@ -15,6 +15,7 @@
 #include "channel_display.hpp"
 #include "callback.hpp"
 #include "wiringPi.h"
+#include "mcp23017.h"
 
 /**\fn ChannelDisplay::ChannelDisplay
  *
