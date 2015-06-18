@@ -27,6 +27,7 @@
  */
 
 ChannelDisplay::ChannelDisplay(){
+void ChannelDisplay::commonConstructor(){
   MidiInput* in = 0;
   MidiCallback* mc = 0;
 
