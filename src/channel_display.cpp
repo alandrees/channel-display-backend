@@ -32,6 +32,22 @@ ChannelDisplay::ChannelDisplay(){
 }
 
 
+/**\fn ChannelDisplay::ChannelDisplay
+ *
+ * Class constructor for passing the IO type to the class
+ *
+ * @param io_type (integer) io type to use
+ *
+ * @returns None
+ */
+
+ChannelDisplay::ChannelDisplay(int io_type){
+  this->iotype = io_type;
+
+  this->commonConstructor();
+}
+
+
 /**\fn ChannelDisplay::commonConstructor
  *
  * Common constructor functionality to be executed between all the overloaded constructors
