@@ -19,6 +19,8 @@
 #define LINE_3 0x94
 #define LINE_4 0xD4
 
+#define LCD_PIN_COUNT 8
+
 #define LCD_RS 0
 #define LCD_ES 1
 #define LCD_D4 2
