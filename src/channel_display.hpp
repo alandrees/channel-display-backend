@@ -31,6 +31,11 @@ class ChannelDisplay : MidiCallback{
       FLUSH_BUFFER=0xc
       };
 
+  enum out_type : int {
+    GPIO=0,
+      I2C=1,
+      SPI=2};
+
   std::vector<MidiInput*>  input; /**Input object**/
   std::vector<LCDOutput*> output; /**Output object**/
   LcdBackend lcd_queue;
