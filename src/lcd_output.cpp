@@ -614,3 +614,17 @@ void LCDOutput::copyToOutput(){
   }
   */
 }
+
+
+/**\fn LCDOutput::getPinCount
+ *
+ * Returns the pins the device requires
+ *
+ * @param None
+ *
+ * @returns (int) representing the number of pins the device requires
+ */
+
+int LCDOutput::getPinCount(){
+  return this->required_pins;
+}
