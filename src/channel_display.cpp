@@ -94,10 +94,14 @@ void ChannelDisplay::commonConstructor(){
 
   this->input[0]->addMessageCallback(&MidiCallback::midiCallback, mc);
 
-  if(this->initGPIO()){
+  if(this->iotype == GPIO){
+    if(this->initGPIO()){
+      this->enableOutputs();
+    }else{
+      this->disableOutputs();
+    }
+  }else if(this->iotype == I2C){
     this->enableOutputs();
-  }else{
-    this->disableOutputs();
   }
 }
 
