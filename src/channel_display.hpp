@@ -43,6 +43,7 @@ class ChannelDisplay : MidiCallback{
   LcdBackend lcd_queue;
   bool initGPIO();
   bool initI2C();
+  void commonConstructor();
 
 public:
   ChannelDisplay();
