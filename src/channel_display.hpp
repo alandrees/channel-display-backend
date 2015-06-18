@@ -21,6 +21,9 @@
 #define LCD_WIDTH 20
 #define LCD_HEIGHT 4
 
+#define MCP_BASE_ADDRESS 0x20
+#define MCP_PIN_BASE 100
+
 class ChannelDisplay : MidiCallback{
   enum command : int {
     ADD_CHARACTER=0xb,
