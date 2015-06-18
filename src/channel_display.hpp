@@ -39,6 +39,7 @@ class ChannelDisplay : MidiCallback{
   std::vector<MidiInput*>  input; /**Input object**/
   std::vector<LCDOutput*> output; /**Output object**/
   std::vector<int>       i2c_fds; /**i2c file descriptors**/
+  int iotype; /**determines the io type to use: gpio, i2c or spi*/
   LcdBackend lcd_queue;
   bool initGPIO();
 
