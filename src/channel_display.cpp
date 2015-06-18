@@ -74,6 +74,11 @@ void ChannelDisplay::commonConstructor(){
   if(lcd_count > 16){
     lcd_count = 16;
   }
+
+  if(this->iotype == I2C){
+    this->initI2C();
+  }
+
   for(i = 0; i < LCD_COUNT; i++){
     x = new LCDOutput(LCD_WIDTH, LCD_HEIGHT, i);
     this->output.push_back(x);
