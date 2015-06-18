@@ -628,3 +628,28 @@ void LCDOutput::copyToOutput(){
 int LCDOutput::getPinCount(){
   return this->required_pins;
 }
+
+
+/**\fn LCDOutput::setOutputPins
+ *
+ * Generates and sets the pin output_pin object for a given required pin
+ *
+ * @param pinbase (int) io pin base number
+ *
+ * @returns None
+ */
+
+void LCDOutput::setOutputPins(int pinbase){
+
+  std::cout << "pinbase:" << pinbase << "\n";
+
+  this->rs = pinbase + LCD_RS;
+  this->es = pinbase + LCD_ES;
+  this->d4 = pinbase + LCD_D4;
+  this->d5 = pinbase + LCD_D5;
+  this->d6 = pinbase + LCD_D6;
+  this->d7 = pinbase + LCD_D7;
+  this->cx = pinbase + LCD_CX;
+
+  std::cout << this->rs;
+}
